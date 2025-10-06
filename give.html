@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give - RCCG TGC The Goodnews Centre | Support Our Ministry</title>
+    <meta name="description" content="Support RCCG TGC The Goodnews Centre. Your generous giving helps us spread the gospel and serve our community.">
+    <meta name="keywords" content="RCCG TGC, give, donation, support, ministry, church, offering, tithe">
+    <meta name="author" content="RCCG TGC The Goodnews Centre">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="tgc logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rccg-blue': '#3A86FF',
+                        'rccg-light': '#dbeafe',
+                        'rccg-dark': '#1e3a8a',
+                        'rccg-gold': '#F6C90E',
+                        'rccg-green': '#1C2541'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Preloader styles */
+        .preloaderBg {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .logo-spinner {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 3px solid transparent;
+            border-top: 3px solid #d4af37;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        .logo-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Pulse animation for loading text */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .pulse-text {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Main content styles */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Hide main content initially */
+        #main-content {
+            display: none;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Give page specific styles */
+        .give-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .give-tab.active {
+            background-color: #F6C90E;
+            color: #1e3a8a;
+        }
+        
+        .account-card {
+            transition: transform 0.2s ease;
+        }
+        
+        .account-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .copy-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <!-- Preloader -->
+    <div class="preloaderBg" id="preloader">
+        <div class="logo-container">
+            <div class="logo-spinner"></div>
+            <!-- RCCG Logo - Replace with actual image path -->
+            <img src="Rccg_logo.png" alt="RCCG Logo" class="logo-image">
+        </div>
+        <h2 class="text-2xl font-bold text-rccg-blue mb-2">RCCG TGC The Goodnews Centre</h2>
+        <p class="text-rccg-blue pulse-text">Loading giving information...</p>
+    </div>
+    
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 rounded-md z-50">Skip to main content</a>
+    
+    <!-- Main Content (hidden initially) -->
+    <div id="main-content" class="w-full mx-auto">
+        <!-- Navigation Bar -->
+        <nav class="navbar bg-rccg-blue text-white sticky top-0 z-40">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-3">
+                    <!-- Logo and Church Name -->
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0">
+                            <!-- RCCG Logo in Navbar -->
+                            <img src="Rccg_logo.png" alt="RCCG Logo" class="h-10 w-10 rounded-full">
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold">RCCG TGC</h1>
+                            <p class="text-xs text-rccg-light">The Goodnews Centre</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="index.html" class="text-white hover:text-rccg-gold transition-colors font-medium">Home</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">About</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Sermons</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Events</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Ministries</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Contact</a>
+                        <a href="give.html" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors">Give</a>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white hover:text-rccg-gold focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="mobile-menu md:hidden bg-rccg-dark pb-4">
+                    <div class="flex flex-col space-y-3">
+                        <a href="index.html" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Home</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">About</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Sermons</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Events</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Ministries</a>
+                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Contact</a>
+                        <a href="give.html" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors mx-4 text-center">Give</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Give Page Content -->
+        <div id="global" class="scroll-to-plus-nav mx-auto max-w-7xl px-4 py-12 fade-in">
+            <div>
+                <h6 class="w-fit rounded-full bg-[#F4F4F4] px-3 py-1 text-xs font-bold">🙏 <span class="ml-1 uppercase">Give to RCCG TGC</span></h6>
+                <div class="md:flex md:items-center md:justify-between">
+                    <h2 class="font-anton text-3xl font-normal leading-loose md:my-6 md:text-6xl">WAYS TO GIVE</h2>
+                    <p class="font-lato text-base tracking-[0.01rem] text-[#00000099] md:max-w-[420px] md:text-right">Join us as we put our money right where our faith is, partnering with God for the spread of the gospel in our day.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div class="my-4 flex justify-center lg:my-8">
+                    <div class="flex items-center self-center rounded-full bg-[#F4F4F4] p-3 text-xs font-bold uppercase text-[#1B1F26B8]">
+                        <span class="give-tab active bg-[#F6C90E] text-rccg-blue mr-2 cursor-pointer rounded-full px-4 py-3 md:mr-4 md:px-8 md:py-4">NAIRA ACCOUNT</span>
+                        <span class="give-tab cursor-pointer rounded-full px-4 py-3 md:px-8 md:py-4">DOMICILIARY ACCOUNT</span>
+                    </div>
+                </div>
+                
+                <div class="flex w-full flex-col rounded border p-4 border-[#F6C90E1F] bg-[#F6C90E29] mb-5">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-xl font-medium">
+                                <div class="h-8 w-8 flex items-center justify-center bg-white rounded-full">
+                                    <span class="text-rccg-blue font-bold">A</span>
+                                </div>
+                                Access Bank
+                            </div>
+                            <div>
+                                <img alt="Nigeria Flag" width="34" height="24" class="h-6" src="nigerian flag.svg">
+                            </div>
+                        </div>
+                        <div class="mx-auto mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                    <p class="uppercase">Main Account</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-2xl lg:text-3xl font-medium text-black">0692529997</p>
+                                    <button class="copy-btn">
+                                        <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                    <p class="uppercase">Building Fund</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-2xl lg:text-3xl font-medium text-black">1911603344</p>
+                                    <button class="copy-btn">
+                                        <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                    <p class="uppercase">Missions Account</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-2xl lg:text-3xl font-medium text-black">1911578888</p>
+                                    <button class="copy-btn">
+                                        <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                    <p class="uppercase">Welfare Account</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="text-2xl lg:text-3xl font-medium text-black">1911506050</p>
+                                    <button class="copy-btn">
+                                        <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:pb-8">
+                    <div class="flex w-full flex-col rounded border p-4 border-[#00000029] bg-[#F3F4F6CC]">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-xl font-medium">
+                                    <div class="h-8 w-8 flex items-center justify-center bg-white rounded-full">
+                                        <span class="text-rccg-blue font-bold">O</span>
+                                    </div>
+                                    Other Accounts
+                                </div>
+                                <div>
+                                    <img alt="Nigeria Flag" width="34" height="24" class="h-6" src="nigerian flag.svg">
+                                </div>
+                            </div>
+                            <div class="mt-4 flex flex-col gap-4">
+                                <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                    <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                        <div class="h-6 w-6 flex items-center justify-center bg-gray-100 rounded-full">
+                                            <span class="text-xs font-bold">S</span>
+                                        </div>
+                                        <p class="">Stanbic IBTC</p>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-2xl lg:text-3xl font-medium text-black">0064035065</p>
+                                        <button class="copy-btn">
+                                            <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="account-card rounded bg-[#FFFFFFCC] p-2 lg:p-4">
+                                    <div class="mb-2 flex items-center gap-1 text-base font-normal text-[#7F7C7C]">
+                                        <div class="h-6 w-6 flex items-center justify-center bg-gray-100 rounded-full">
+                                            <span class="text-xs font-bold">M</span>
+                                        </div>
+                                        <p class="">Moniepoint</p>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-2xl lg:text-3xl font-medium text-black">4664390779</p>
+                                        <button class="copy-btn">
+                                            <i class="far fa-copy text-gray-500 hover:text-rccg-blue"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex w-full flex-col justify-between gap-3 rounded border bg-[#EDF4FA] border-[#3A86FF]">
+                        <div class="p-4">
+                            <div class="flex items-center gap-2 text-xl font-medium">
+                                <div class="h-8 w-8 flex items-center justify-center bg-white rounded-full">
+                                    <i class="fab fa-paypal text-[#3A86FF]"></i>
+                                </div>
+                                <p>Give via PayPal</p>
+                            </div>
+                            <p class="mb-10 mt-4 text-lg text-black opacity-60">Give securely from anywhere in the world using PayPal balance, credit/debit cards, or bank accounts.</p>
+                        </div>
+                        <a target="_blank" class="give-pay-by-link flex w-full items-center justify-center gap-3 px-4 py-6 text-sm uppercase tracking-[0.24em] text-white bg-[#3A86FF]" href="#">
+                            Give Now
+                            <i class="fas fa-arrow-right text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-sm mb-4 md:mb-0">
+                        <p class="font-medium">RCCG TGC The Goodnews Centre</p>
+                        <p class="mt-1">A Parish of the Redeemed Christian Church of God</p>
+                        <p class="mt-2 text-xs">&copy; 2025 RCCG TGC The Goodnews Centre. All Rights Reserved.</p>
+                    </div>
+                    <div class="text-xs text-gray-400">
+                        <p>Contact: info@rccgtgc.org | +234 XXX XXX XXXX</p>
+                        <p class="mt-1">Redeemer's Close off Toronto roundabout, Road Safety Road, Uratta, Owerri, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Preloader functionality
+        var preloadTime;
+        
+        function preloader() {
+            preloadTime = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }
+        
+        // Initialize preloader when page loads
+        window.onload = preloader;
+        
+        // Give page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const tabs = document.querySelectorAll('.give-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Copy account number functionality
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const accountNumber = this.parentElement.querySelector('p').textContent;
+                    navigator.clipboard.writeText(accountNumber).then(() => {
+                        // Visual feedback
+                        const originalIcon = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check text-green-500"></i>';
+                        setTimeout(() => {
+                            this.innerHTML = originalIcon;
+                        }, 2000);
+                    });
+                });
+            });
+            
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('open');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideMenu = mobileMenu.contains(event.target);
+                    const isClickInsideButton = mobileMenuButton.contains(event.target);
+                    
+                    if (!isClickInsideMenu && !isClickInsideButton && mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                });
+            }
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 10) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
