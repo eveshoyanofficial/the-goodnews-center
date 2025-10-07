@@ -18,11 +18,8 @@
     
     <!-- Favicon -->
     <link rel="icon" href="tgc logo.jpg">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-=======
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
     
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,7 +139,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-<<<<<<< HEAD
         /* Social Media Links Styling */
         .social-links-container {
             display: flex;
@@ -157,7 +153,7 @@
             border-radius: 6px;
             transition: all 0.3s ease;
             text-decoration: none;
-            color: #4b5563;
+            color: #fff;
             font-size: 14px;
         }
         
@@ -194,8 +190,6 @@
             color: #3A86FF;
         }
         
-=======
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
         /* Improve accessibility */
         .focus-visible:focus {
             outline: 2px solid #d4af37;
@@ -232,7 +226,6 @@
             max-height: 500px;
         }
         
-<<<<<<< HEAD
         /* New Carousel Styles */
         :root {
           --transition-duration: 0.6s;
@@ -389,97 +382,6 @@
           .slide-content p {
             display: none;
           }
-=======
-        /* Carousel styles */
-        * {box-sizing: border-box; margin: 0; padding: 0;}
-        
-        .slider {
-            position: relative;
-            width: 100%;
-            height: 80vh;
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        .slider ul {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s ease-in-out;
-        }
-
-        .slider li {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(75%);
-        }
-
-        .content {
-            position: absolute;
-            bottom: 15%;
-            left: 10%;
-            color: #fff;
-            font-size: 2rem;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        .slider button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: #fff;
-            font-size: 2rem;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background 0.3s ease;
-            z-index: 10;
-        }
-
-        .slider button:hover {
-            background: rgba(255, 255, 255, 0.6);
-            color: #000;
-        }
-
-        .prev { left: 20px; }
-        .next { right: 20px; }
-
-        .nav-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-
-        .nav-dots li {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .nav-dots li.active {
-            background: #F6C90E;
-        }
-
-        @media (max-width: 768px) {
-            .content { font-size: 1.5rem; bottom: 10%; left: 5%; }
-            .slider button { font-size: 1.5rem; }
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
         }
     </style>
 </head>
@@ -518,22 +420,13 @@
                     
                     <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-6">
-<<<<<<< HEAD
                         <a href="#main-content" class="text-white hover:text-rccg-gold transition-colors font-medium">Home</a>
                         <a href="#about-heading" class="text-white hover:text-rccg-gold transition-colors font-medium">About</a>
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Sermons</a>
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Events</a>
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Ministries</a>
                         <a href="#contact" class="text-white hover:text-rccg-gold transition-colors font-medium">Contact</a>
-=======
-                        <a href="index.html" class="text-white hover:text-rccg-gold transition-colors font-medium">Home</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">About</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Sermons</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Events</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Ministries</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium">Contact</a>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
-                        <a href="#" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors">Give</a>
+                        <a href="give.html" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors">Give</a>
                     </div>
                     
                     <!-- Mobile menu button -->
@@ -549,63 +442,20 @@
                 <!-- Mobile Navigation Menu -->
                 <div id="mobile-menu" class="mobile-menu md:hidden bg-rccg-dark pb-4">
                     <div class="flex flex-col space-y-3">
-                        <a href="index.html" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Home</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">About</a>
+                        <a href="#main-content" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Home</a>
+                        <a href="#about-heading" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">About</a>
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Sermons</a>
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Events</a>
-<<<<<<< HEAD
                         <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Ministries</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Contact</a>
-                        <a href="/give.html" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors mx-4 text-center">Give</a>
-=======
-                        <a href="#slider-list" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Ministries</a>
-                        <a href="#" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Contact</a>
-                        <a href="#" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors mx-4 text-center">Give</a>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
+                        <a href="#contact" class="text-white hover:text-rccg-gold transition-colors font-medium py-2 px-4">Contact</a>
+                        <a href="give.html" class="bg-rccg-gold text-rccg-blue px-4 py-2 rounded-md font-medium hover:bg-yellow-500 transition-colors mx-4 text-center">Give</a>
                     </div>
                 </div>
             </div>
         </nav>
         
-<<<<<<< HEAD
         <!-- New Dynamic Carousel -->
         <div class="carousel" id="carousel"></div>
-=======
-        <!-- Image Carousel -->
-        <div class="slider">
-            <ul id="slider-list">
-                <li>
-                    <img src="1.jpg" alt="Church Worship Service">
-                    <div class="content">Welcome to RCCG TGC The Goodnews Centre</div>
-                </li>
-                <li>
-                    <img src="carosel 1.jpg" alt="Bible Study">
-                    <div class="content">Deepening Faith Through Bible Study</div>
-                </li>
-                <li>
-                    <img src="carosuel.jpg" alt="Prayer Gathering">
-                    <div class="content">Join Our Prayer Gatherings</div>
-                </li>
-                <li>
-                    <img src="carousel 2.jpg" alt="Community Outreach">
-                    <div class="content">Serving Our Community</div>
-                </li>
-                <li>
-                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Youth Ministry">
-                    <div class="content">Vibrant Youth Ministry</div>
-                </li>
-            </ul>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-            <ul class="nav-dots" id="nav-dots">
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
         
         <!-- Page Content -->
         <div class="container mx-auto px-4 py-8 max-w-4xl">
@@ -613,13 +463,8 @@
             <main role="main" class="bg-white rounded-lg shadow-xl overflow-hidden fade-in">
                 <div class="p-6 md:p-8">
                     <div class="text-center mb-8">
-<<<<<<< HEAD
                         <h2 id="about-heading" class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome to the Goodnews Center</h2>
                         <p class="text-gray-600 max-w-2xl mx-auto"> RCCG TGC The Goodnews Centre.</p>
-=======
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Welcome to Our Church Resources</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Access sermons, events, bible studies and other spiritual resources from RCCG TGC The Goodnews Centre.</p>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
                     </div>
                     
                     <!-- Breadcrumb navigation -->
@@ -631,7 +476,6 @@
                         </ol>
                     </nav>
                     
-<<<<<<< HEAD
                     <!-- About RCCG TGC Section -->
                     <section aria-labelledby="about-heading" class="bg-gray-50 p-6 rounded-lg mb-8">
                         <h3  class="text-xl font-bold text-gray-800 mb-4">About RCCG TGC The Goodnews Centre</h3>
@@ -644,103 +488,6 @@
                                 <li>Have a member of RCCG in every family of all nations</li>
                                 <li>Accomplish No. 1 above by living a holy life, and No. 2 and 3 above by propagating the gospel</li>
                                 <li>To accomplish No. 2 and 3 above, we will plant churches within five minutes walking distance in every city and town of developing countries and within fifteen minutes driving distance in every city and town of developed countries</li>
-=======
-                    <!-- Church Resources List -->
-                    <section aria-labelledby="resources-heading" class="mb-8">
-                        <h3 id="resources-heading" class="sr-only">Church Resources</h3>
-                        
-                        <div class="bg-gradient-to-r from-rccg-light to-blue-50 border-l-4 border-rccg-gold p-4 rounded-md mb-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 pt-1">
-                                    <svg class="h-5 w-5 text-rccg-gold" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm text-gray-700">Browse our collection of spiritual resources to strengthen your faith and walk with God.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                                <a href="sermons/index.html" class="block p-4 focus-visible">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 bg-rccg-light rounded-full flex items-center justify-center">
-                                            <svg class="h-6 w-6 text-rccg-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-medium text-gray-900">Sermons & Teachings</h4>
-                                            <p class="text-sm text-gray-500 mt-1">Audio and video messages from our pastors</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                                <a href="events/index.html" class="block p-4 focus-visible">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 bg-rccg-light rounded-full flex items-center justify-center">
-                                            <svg class="h-6 w-6 text-rccg-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-medium text-gray-900">Church Events</h4>
-                                            <p class="text-sm text-gray-500 mt-1">Upcoming programs and activities</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                                <a href="bible-studies/index.html" class="block p-4 focus-visible">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 bg-rccg-light rounded-full flex items-center justify-center">
-                                            <svg class="h-6 w-6 text-rccg-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-medium text-gray-900">Bible Studies</h4>
-                                            <p class="text-sm text-gray-500 mt-1">In-depth study of God's Word</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                                <a href="prayer-requests/index.html" class="block p-4 focus-visible">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 bg-rccg-light rounded-full flex items-center justify-center">
-                                            <svg class="h-6 w-6 text-rccg-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-medium text-gray-900">Prayer Requests</h4>
-                                            <p class="text-sm text-gray-500 mt-1">Submit your prayer needs</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- About RCCG TGC Section -->
-                    <section aria-labelledby="about-heading" class="bg-gray-50 p-6 rounded-lg mb-8">
-                        <h3 id="about-heading" class="text-xl font-bold text-gray-800 mb-4">About RCCG TGC The Goodnews Centre</h3>
-                        <div class="prose prose-sm max-w-none text-gray-700">
-                            <p>The Goodnews Centre (TGC) is a vibrant parish of the Redeemed Christian Church of God committed to spreading the gospel of Jesus Christ and building disciples for kingdom service.</p>
-                            <p class="mt-2">Our mission is to:</p>
-                            <ul class="list-disc pl-5 mt-2">
-                                <li>Make heaven</li>
-                                <li>Take as many people as possible with us</li>
-                                <li>Have a member of RCCG in every family of all nations</li>
-                                <li>Accomplish No. 1 above by living a holy life, and No. 2 and 3 above by propagating the gospel</li>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
                             </ul>
                             <p class="mt-3">We welcome you to join us for our worship services and experience the love of God in a warm and friendly atmosphere.</p>
                         </div>
@@ -753,15 +500,9 @@
                             <div class="bg-rccg-light p-4 rounded-lg">
                                 <h4 class="font-semibold text-rccg-blue">Sunday Services</h4>
                                 <ul class="mt-2 text-sm text-gray-700">
-<<<<<<< HEAD
                                     <li>First Service: 7:20 AM - 9:00 AM</li>
                                     <li>Sunday School: 9:00 AM - 9:40 AM</li>
                                     <li>Second Service: 9:40 AM - 11:30 AM</li>
-=======
-                                    <li>First Service: 7:00 AM - 9:00 AM</li>
-                                    <li>Second Service: 9:30 AM - 11:30 AM</li>
-                                    <li>Third Service: 12:00 PM - 2:00 PM</li>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
                                 </ul>
                             </div>
                             <div class="bg-rccg-light p-4 rounded-lg">
@@ -775,7 +516,6 @@
                         </div>
                     </section>
                     
-<<<<<<< HEAD
                     <!-- Connect With Us Section -->
                     <section aria-labelledby="connect-heading" id="contact" class="bg-gradient-to-r from-rccg-blue to-rccg-dark p-6 rounded-lg mb-8 text-white">
                         <h3 id="connect-heading" class="text-xl font-bold mb-4">Connect With Us</h3>
@@ -831,27 +571,17 @@
                         </div>
                     </section>
                     
-=======
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
                     <!-- Footer -->
                     <footer class="border-t border-gray-200 pt-6">
                         <div class="flex flex-col md:flex-row justify-between items-center">
                             <div class="text-sm text-gray-600 mb-4 md:mb-0">
                                 <p class="font-medium">RCCG TGC The Goodnews Centre</p>
                                 <p class="mt-1">A Parish of the Redeemed Christian Church of God</p>
-<<<<<<< HEAD
                                 <p class="mt-2 text-xs">&copy; 2025 RCCG TGC The Goodnews Centre. All Rights Reserved.</p>
                             </div>
                             <div class="text-xs text-gray-500">
                                 <p>Contact: info@rccgtgc.org | +234 XXX XXX XXXX</p>
                                 <p class="mt-1">Redeemer's Close off Toronto roundabout, Road Safety Road, Uratta, Owerri, Nigeria</p>
-=======
-                                <p class="mt-2 text-xs">&copy; 2023 RCCG TGC The Goodnews Centre. All Rights Reserved.</p>
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                <p>Contact: info@rccgtgc.org | +234 XXX XXX XXXX</p>
-                                <p class="mt-1">Address: Church Street, Lagos, Nigeria</p>
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
                             </div>
                         </div>
                     </footer>
@@ -878,7 +608,6 @@
         // Initialize preloader when page loads
         window.onload = preloader;
         
-<<<<<<< HEAD
         // New Carousel Functionality
         const posts = [
           {
@@ -899,22 +628,23 @@
             readTime: "1 hour",
             url: "#"
           },
+         
           {
             title: "Prayer Gatherings",
             excerpt: "Come together in prayer and experience the power of collective faith.",
-            imageSrc: "carosuel.jpg",
-            author: "RCCG TGC",
-            date: "Every Thursday",
-            readTime: "1 hour",
-            url: "#"
-          },
-          {
-            title: "Serving Our Community",
-            excerpt: "We are committed to serving our community and spreading the gospel through action.",
             imageSrc: "carousel2.jpg",
             author: "RCCG TGC",
             date: "Various Events",
             readTime: "Ongoing",
+            url: "#"
+          }, 
+          {
+            title: "Serving Our Community",
+            excerpt: "We are committed to serving our community and spreading the gospel through action.",
+            imageSrc: "carosuel.jpg",
+            author: "RCCG TGC",
+            date: "Every Thursday",
+            readTime: "1 hour",
             url: "#"
           },
           {
@@ -1029,65 +759,6 @@
             currentIndex = (currentIndex + 1) % posts.length;
             updateSlides();
           }, 6000);
-=======
-        // Carousel functionality
-        function initCarousel() {
-            const sliderList = document.getElementById('slider-list');
-            const slides = document.querySelectorAll('.slider li');
-            const dots = document.querySelectorAll('.nav-dots li');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-            
-            // Function to update the carousel
-            function updateCarousel() {
-                sliderList.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
-                // Update active dot
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
-                });
-            }
-            
-            // Next slide function
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }
-            
-            // Previous slide function
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-            }
-            
-            // Event listeners for buttons
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // Event listeners for dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
-            });
-            
-            // Auto slide every 5 seconds
-            let autoSlide = setInterval(nextSlide, 5000);
-            
-            // Pause auto slide on hover
-            const slider = document.querySelector('.slider');
-            slider.addEventListener('mouseenter', () => {
-                clearInterval(autoSlide);
-            });
-            
-            slider.addEventListener('mouseleave', () => {
-                autoSlide = setInterval(nextSlide, 5000);
-            });
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
         }
         
         // Mobile menu functionality
@@ -1132,18 +803,6 @@
                     }
                 });
             });
-<<<<<<< HEAD
-=======
-            
-            // Add loading animation to resource cards
-            const resourceCards = document.querySelectorAll('a[href*="index.html"]');
-            resourceCards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    // In a real implementation, you might show a loading indicator here
-                    console.log('Navigating to: ' + this.getAttribute('href'));
-                });
-            });
->>>>>>> 50929fdc1f42ad38b20e37da8445b0be73bd2445
         });
     </script>
 </body>
