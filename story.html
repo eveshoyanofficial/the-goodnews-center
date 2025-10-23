@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story of TGC - RCCG The Goodnews Centre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --rccg-blue: #3A86FF;
+            --rccg-dark-blue: #1e3a8a;
+            --rccg-gold: #F6C90E;
+            --rccg-light: #dbeafe;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--rccg-blue) 0%, var(--rccg-dark-blue) 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--rccg-dark-blue) 0%, var(--rccg-blue) 100%);
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .church-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--rccg-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 2em;
+            color: var(--rccg-dark-blue);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: var(--rccg-dark-blue);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--rccg-gold);
+            font-size: 1.8em;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background: var(--rccg-light);
+            padding: 15px;
+            border-left: 4px solid var(--rccg-gold);
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .workers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .worker-card {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--rccg-blue);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .worker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .worker-number {
+            background: var(--rccg-gold);
+            color: var(--rccg-dark-blue);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .worker-name {
+            font-weight: 600;
+            color: var(--rccg-dark-blue);
+        }
+        
+        .worker-role {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            background: var(--rccg-dark-blue);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .footer p {
+            text-align: center;
+            margin: 0;
+            font-size: 1em;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--rccg-gold);
+            color: var(--rccg-dark-blue);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #e6b905;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .workers-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            header h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="church-logo">
+                    <i class="fas fa-church"></i>
+                </div>
+                <h1>The Story of The Goodnews Centre (TGC)</h1>
+                <p>RCCG - A Parish of the Redeemed Christian Church of God</p>
+            </div>
+        </header>
+        
+        <div class="content">
+            <p>The Redeemed Christian Church of God, The Goodnews Centre which is fondly known as TGC was planted on 12th of April 2009 and the venue for this grand take off was at #49 MCC Road which currently houses RCCG - House of David. God made this possible through Pastor Ola Adejubee as the Pastor in charge of Province being assisted by Late Pastor Inakhire Chamberlin of blessed memory during the season when Pst E. A. ADEBOYE instructed all provinces to create a Youth Church and we won't cease to mention that this was also facilitated by stOgaga Timeyin-Ekpo who was the Province Youth Pastor at the time, for Imo Province.</p>
+            
+            <div class="highlight">
+                <p>At the time of this planting, Bro. Paul Adepegba was chosen from Rhema Assembly Zone to pioneer this work. He was sent along with 12 other workers for this assignment.</p>
+            </div>
+            
+            <h2>Names of the Pioneering Workers:</h2>
+            
+            <div class="workers-list">
+                <div class="worker-card">
+                    <div class="worker-number">1</div>
+                    <div>
+                        <div class="worker-name">Paul Adepegba</div>
+                        <div class="worker-role">Parish Pastor</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">2</div>
+                    <div>
+                        <div class="worker-name">Olabisi Adepegba</div>
+                        <div class="worker-role">Pastor's wife</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">3</div>
+                    <div>
+                        <div class="worker-name">ThankGod Okamadirim</div>
+                        <div class="worker-role">Asst Pastor</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">4</div>
+                    <div>
+                        <div class="worker-name">Jackson Ugbade</div>
+                        <div class="worker-role">Head Usher</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">5</div>
+                    <div>
+                        <div class="worker-name">David Benison</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">6</div>
+                    <div>
+                        <div class="worker-name">Chidimma Ayoola</div>
+                        <div class="worker-role">Worker (Blessed memory)</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">7</div>
+                    <div>
+                        <div class="worker-name">Inkriz Ajayi</div>
+                        <div class="worker-role">Choir leader</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">8</div>
+                    <div>
+                        <div class="worker-name">Uchechi Agbugba</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">9</div>
+                    <div>
+                        <div class="worker-name">Amaka</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">10</div>
+                    <div>
+                        <div class="worker-name">Kelechi Ezeani</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">11</div>
+                    <div>
+                        <div class="worker-name">Chinwe Okorie</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">12</div>
+                    <div>
+                        <div class="worker-name">Osinakachi Benison</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+                
+                <div class="worker-card">
+                    <div class="worker-number">13</div>
+                    <div>
+                        <div class="worker-name">Ifeanyi Benison</div>
+                        <div class="worker-role">Worker</div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 The Goodnews Centre (TGC) - RCCG. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
